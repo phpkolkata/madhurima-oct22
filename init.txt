@@ -1,1 +1,14 @@
-test
+Course:
+
+Front-End
+---------
+html
+Css
+bootstrap
+javascript
+Jquery
+
+Back-End
+PHP
+Mysql
+Laravel(basics)
