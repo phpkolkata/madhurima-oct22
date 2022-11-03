@@ -1,43 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style type="text/css">
-        .container{
-            height: 720px;
-        }
-        .bdr{
-            border:1px solid black;
-        }
-        .header{
-            height: 150px;
-            width:100%;
-        }
-        .nav{
-            float:left;
-            width:20%;
-            height:500px;
-        }
-        .body{
-            float:right;
-            width:79%;
-            height: 500px;
-        }
-        .footer{
-            height: 60px;
-        }
+      .container {
+        height: 720px;
+      }
+      .bdr {
+        border: 1px solid black;
+      }
+      .header {
+        height: 150px;
+        width: 100%;
+      }
+      .nav {
+        float: left;
+        width: 20%;
+        height: 500px;
+      }
+      .body {
+        float: right;
+        width: 79%;
+        height: 500px;
+      }
+      .footer {
+        height: 60px;
+      }
+      ul {
+        list-style-type: none;
+      }
+      ul li {
+        margin: 10px;
+        font-size: 22px;
+      }
+      li a {
+        text-decoration: none;
+      }
+
+      a:link {
+        color: blue;
+      }
+      a:hover {
+        color: red;
+      }
+      .img200 {
+        height: 150px;
+        width: 150px;
+      }
+      .box600 {
+        width: 600px;
+      }
+      .float-right {
+        float: right;
+      }
+      .float-left {
+        float: left;
+      }
+      .clear-float {
+        clear: both;
+      }
+      .p-1 {
+        padding: 10px;
+      }
+      .p-2 {
+        padding: 20px;
+      }
+      .top-body{
+        border:1px solid rgb(242, 244, 242);
+        height: 200px;
+        box-shadow: 5px 10px 5px rgb(225, 223, 223);
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container bdr">
-        <div class="bdr header">header</div>
-        <div class="nav bdr">nav</div>
-        <div class="body">body</div>
-        <div style="clear:both"></div>
-        <div class="footer bdr">footsser</div>
+      <div class="bdr header">header</div>
+      <div class="nav bdr">
+        <ul>
+          <li><a href="6.html">Manage Products</a></li>
+          <li><a href="">Manage Cateogries</a></li>
+          <li><a href="">Mangae Clients</a></li>
+          <li><a href="">Manage Orders</a></li>
+        </ul>
+      </div>
+      <div class="body">
+        <div class="top-body" style="width: 900px; margin: 10px auto">
+          <div class="top-body-img p-2 img200 float-left">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrO6KMJljsxS0jTDmVu4Z2UZfje5GmEuoUyfsTAng&s"
+            />
+          </div>
+          <div class="top-body-text  box600 float-right p-2">
+            hello this is test with css and html , we are learning somehting.
+            hello this is test with css and html , we are learning somehting.
+            hello this is test with css and html , we are learning somehting.
+            hello this is test with css and html , we are learning somehting.
+            hello this is test with css and html , we are learning somehting.
+            hello this is test with css and html , we are learning somehting.
+            hello this is test with css and html , we are learning somehting.
+            hello this is test with css and html , we are learning somehting.
+            hello this is test with css and html , we are learning somehting.
+          </div>
+        </div>
+      </div>
+      <div style="clear: both"></div>
+      <div class="footer bdr">footsser</div>
     </div>
-</body>
+  </body>
 </html>
