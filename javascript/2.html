@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function hello(){
+            var user = document.getElementById("nm"); //js selector
+            // var user = <input type="text" value="" id="nm">
+            alert("hello "+ user.value);
+            // user.type = "checkbox";
+        }
+    </script>
+</head>
+<body>
+
+    <!-- case -->
+    <!-- 1. upper case - HELLO INDIA
+    2. lower case - hello India
+    3. camel case - helloIndia
+    4. snake case - hello_india
+    5. pascal case - HelloIndia -->
+
+    Name:<input type="text" value="" id="nm">
+    <br>
+    <button onclick="hello()">click me</button>
+</body>
+</html>
