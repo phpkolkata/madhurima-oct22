@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js form validation</title>
+    <style type="text/css">
+      .error {
+        color: red;
+      }
+    </style>
+    <script>
+      function hello() {
+        var nm = document.getElementById("nm");
+        var msg_nm = document.getElementById("msg_nm");
+        var age = document.getElementById("age");
+        var msg_age = document.getElementById("msg_age");
+
+        if (nm.value == "") {
+          //   alert("please enter your name first!");
+          msg_nm.innerHTML = "please enter your name first!";
+          nm.focus();
+          return;
+        } else if (nm.value.length < 4 || nm.value.length > 10) {
+          //   alert("Please enter name between 4-10 chars.");
+          msg_nm.innerHTML = "Please enter name between 4-10 chars.";
+          return;
+        }
+        else{
+          msg_nm.innerHTML = "";
+        }
+
+        if (age.value == "") {
+          //   alert("please enter your age first!");
+          msg_age.innerHTML = "please enter your age first!";
+
+          age.focus();
+          return;
+        } else if (isNaN(age.value)) {
+          //   alert("please enter your age in numbers!");
+          msg_age.innerHTML = "please enter your age in numbers!";
+          age.focus();
+          return;
+        }
+        else{
+          msg_age.innerHTML = "";
+
+        }
+
+        alert("hello " + nm.value + " your age is " + age.value);
+      }
+    </script>
+  </head>
+  <body>
+    Name:<input type="text" value="" id="nm" />
+    <span class="error" id="msg_nm"></span>
+    <br />
+    Age:<input type="text" value="" id="age" />
+    <span class="error" id="msg_age"></span>
+    <br />
+    <button onclick="hello()">click me</button>
+  </body>
+</html>
