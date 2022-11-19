@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>js form validation</title>
+        <script>
+          function hello() {
+            var nm = document.getElementById("nm");
+            var age = document.getElementById("age");
+
+            if (nm.value == "") {
+              alert("please enter your name first!");
+              nm.focus();
+              return false;
+            } else if (nm.value.length < 4 || nm.value.length > 10) {
+              alert("Please enter name between 4-10 chars.");
+              return false;
+            }
+
+            if (age.value == "") {
+              alert("please enter your age first!");
+              age.focus();
+              return false;
+            } else if (isNaN(age.value)) {
+              alert("please enter your age in numbers!");
+              age.focus();
+              return false;
+            }
+
+            alert("hello " + nm.value + " your age is " + age.value);
+            return true;
+          }
+        </script>
+      </head>
+      <body>
+        <form action="1.php" method="post"> 
+          Name:<input type="text" value="" id="nm" /> (4-10 chars)
+          <br />
+          Age:<input type="text" value="" id="age" />(number, under 100)
+          <br />
+          Email:<input type="text" value="" id="email" />(format)
+          <br />
+          Gender:
+          <input type="radio" name="gender" /> Male
+          <input type="radio" name="gender" /> Female
+          <br />
+          City:
+          <select>
+            <option>select...</option>
+            <option>Delhi</option>
+            <option>Bangluru</option>
+            <option>Howrah</option>
+            <option>Kolkata</option>
+          </select>
+          <br />
+          Hobbies:
+          <input type="checkbox" />reading books
+          <input type="checkbox" />watching movies
+          <input type="checkbox" />sports <input type="checkbox" />cooking
+          <br />
+          <button onclick="return hello()">click me</button>
+        </form>
+      </body>
+    </html>
+  </body>
+</html>
