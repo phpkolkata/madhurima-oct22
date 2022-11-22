@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <script>
+        function chColor(c){
+            var box = document.getElementById("box");
+            box.style.color = c;
+        }
+
+        // function hide(){
+        //     var box = document.getElementById("box");
+        //     box.style.display = 'none';
+        // }
+
+        // function show(){
+        //     var box = document.getElementById("box");
+        //     box.style.display = 'block';
+        // }
+
+        // function showHide(val){
+        //     var box = document.getElementById("box");
+        //     box.style.display = val;
+        // }
+       
+        function showHide(){
+            var box = document.getElementById("box");
+            var btn = document.getElementById("btn");
+
+            if(box.style.display == "none"){
+                box.style.display = "block";
+                btn.innerHTML = "Hide";
+                btn.classList.add('btn-info');
+                btn.classList.remove('btn-warning');
+            }
+            else{
+                box.style.display = "none";
+                btn.innerHTML = "Show";
+                btn.classList.remove('btn-info');
+                btn.classList.add('btn-warning');
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+    
+<div class="w-50 card shadow mx-auto p-5 m-5" id="box">
+    Hello this is my javascript class for DOM Manipulation, I learning good. Homework is important, I will take care of it next time, altough next time never comes
+    Hello this is my javascript class for DOM Manipulation, I learning good. Homework is important, I will take care of it next time, altough next time never comes
+    Hello this is my javascript class for DOM Manipulation, I learning good. Homework is important, I will take care of it next time, altough next time never comes
+    Hello this is my javascript class for DOM Manipulation, I learning good. Homework is important, I will take care of it next time, altough next time never comes
+    Hello this is my javascript class for DOM Manipulation, I learning good. Homework is important, I will take care of it next time, altough next time never comes
+    Hello this is my javascript class for DOM Manipulation, I learning good. Homework is important, I will take care of it next time, altough next time never comes
+    Hello this is my javascript class for DOM Manipulation, I learning good. Homework is important, I will take care of it next time, altough next time never comes
+</div>
+
+<div class="w-50 card  mx-auto p-2">
+    <div>
+        <button class="btn btn-danger" onclick="chColor('red')">Red</button>
+        <button class="btn btn-success" onclick="chColor('green')">Green</button>
+        <button class="btn btn-primary" onclick="chColor('blue')">Blue</button>
+        
+        <button class="btn btn-info ms-5" id="btn" onclick="showHide()">Hide</button>
+        <!-- <button class="btn btn-warning" onclick="showHide()">Show</button> -->
+
+    </div>
+
+</div>
+
+</body>
+</html>
