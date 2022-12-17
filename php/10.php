@@ -1,5 +1,9 @@
 <?php
-include "functions.php";
+// include "functions.php"; // if not found, warning and executes the rest of code
+require "functions.php"; // if not found, fatal error, and script stops immedietly
+
+// include_once
+// require_once
 
 echo add(20,40);
 print "<br>";
