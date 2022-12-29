@@ -1,5 +1,5 @@
 <?php
-print_r($_POST);
+print_r($_GET);
 // $nm = strtoupper($_GET['unm']);
 // $age = $_GET['age'];
 
