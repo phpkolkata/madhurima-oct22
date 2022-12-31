@@ -8,4 +8,4 @@
 // 4. $_FILES
 // 5. $_SESSION
 // 6. $_COOKIE
-// 7. $_SERVER
+// 7. $_SERVER  
