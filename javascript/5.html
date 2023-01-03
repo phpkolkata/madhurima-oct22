@@ -12,10 +12,10 @@
     </style>
     <script>
       function hello() {
-        var nm = document.getElementById("nm");
-        var msg_nm = document.getElementById("msg_nm");
-        var age = document.getElementById("age");
-        var msg_age = document.getElementById("msg_age");
+        // var nm = document.getElementById("nm");
+        // var msg_nm = document.getElementById("msg_nm");
+        // var age = document.getElementById("age");
+        // var msg_age = document.getElementById("msg_age");
 
         if (nm.value == "") {
           //   alert("please enter your name first!");
@@ -45,7 +45,6 @@
         }
         else{
           msg_age.innerHTML = "";
-
         }
 
         alert("hello " + nm.value + " your age is " + age.value);
@@ -59,6 +58,7 @@
     Age:<input type="text" value="" id="age" />
     <span class="error" id="msg_age"></span>
     <br />
+    <div id="box"></div>
     <button onclick="hello()">click me</button>
   </body>
 </html>
