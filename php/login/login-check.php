@@ -3,6 +3,7 @@ session_start();
 extract($_POST);
 
 if($usr == "test" && $pass == "test"){
+    $_SESSION['nm'] = 'raj';
     $_SESSION['login'] = true;
     header("location:home.php");
 }
