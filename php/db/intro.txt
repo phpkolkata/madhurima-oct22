@@ -1,0 +1,41 @@
+Database: collection of tables
+tables: collection of records
+
+mobile_stdname (database)
+Category
+Product
+Client
+Order
+
+Category:
+id
+name
+is_active(y/n)
+
+
+Product:
+id
+cat_id
+name
+price
+desc
+is_active(y/n)
+
+
+Client:
+id
+name
+email
+password
+phone
+address
+join_date
+
+Order:
+id
+cl_id
+pid
+price
+qnty
+order_date
+status (pending,dispatched, return, cancel)
