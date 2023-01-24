@@ -1,4 +1,6 @@
 <?php
+require("session_security.php");
+
 require("db-connection.php");
 
 extract($_POST);

@@ -1,4 +1,6 @@
-
+<?php
+require("session_security.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,12 +24,30 @@
 <?php
 require("db-connection.php");
 
+// get total records
+$sql = "SELECT * FROM `category`";
+$res = mysqli_query($con, $sql) or die("error 0");
+$total = mysqli_num_rows($res);
+
+// echo $total;
+// pagination code
+// LIMIT 0,2 (starting point, no. of records)
+
+$start = 0;
+$limit = 2;
+$pages = ceil($total / $limit);
+
+
+if(isset($_REQUEST['p'])){
+    $start = ($_REQUEST['p'] - 1) * $limit;
+}
+
 $where = "";
 if(isset($_GET['srch'])){
     $where = "WHERE  `name` like '%$_GET[srch]%'";
 }
 
-$sql = "SELECT * FROM `category` $where ORDER BY `id` DESC";
+$sql = "SELECT * FROM `category` $where ORDER BY `id` DESC LIMIT $start,$limit";
 
 print $sql;
 
@@ -69,6 +89,14 @@ while($row = mysqli_fetch_assoc($res)){
     ";
 }
 print"</table>";
+
+print"<div style='margin-left:60px;font-size:20px'>";
+for($i=1;$i<=$pages;$i++){
+    echo "<a href='?p=$i'>$i</a> | ";
+}
+print "</div>";
+
+print"<a href='logout.php'>Logout</a>";
 ?>
 
 
