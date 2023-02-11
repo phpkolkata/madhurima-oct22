@@ -1,0 +1,8 @@
+OOP - Object Oriented Programming
+
+4 pillar:
+---------
+1. Encapsulation - property & method inside the class is called Encapsulation
+2. Inheritance - extending a class to a child class is called Inheritance
+3. Polymorphism
+4. Abstraction
