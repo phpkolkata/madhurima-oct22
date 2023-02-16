@@ -10,4 +10,5 @@ class display{
         echo $this->protected."<br>";
         echo $this->private."<br>";
     }
+    
 }

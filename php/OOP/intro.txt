@@ -5,4 +5,4 @@ OOP - Object Oriented Programming
 1. Encapsulation - property & method inside the class is called Encapsulation
 2. Inheritance - extending a class to a child class is called Inheritance
 3. Polymorphism - many forms, method overriding (exact same method), method overloading (same method with different params or type)
-4. Abstraction - 
+4. Abstraction - a class with a function declearation must be implement by child is called abstraction
