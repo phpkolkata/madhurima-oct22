@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // logic area
+    $name = "raj";
+    return view('welcome',["nm"=>$name]);
 });
 
 Route::get('test', function () {
-    return view('test');
+    $name = "raj";
+    return view('test',["nm"=>$name]);
 });
+
+Route::get('/age', function(){
+    $age = 3;
+    return view('age',["age"=>$age]);
+});
+
+
+Route::get('pages/page1',[PageController::class, 'page1']);
+
+Route::get('pages/page2',[PageController::class, 'page2'] );
