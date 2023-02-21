@@ -11,8 +11,8 @@ class PageController extends Controller
         return view("pages/page1");
     }
 
-      function page2(){
+      function page2($id=0){
         // logics
-        return view("pages/page2");
+        return view("pages/page2",['id'=>$id]);
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,7 +31,16 @@ Route::get('/age', function(){
     return view('age',["age"=>$age]);
 });
 
+Route::get("admin/product", function(){
+    return view("admin.product");
+});
+
+
+Route::get("admin/product-add", [ProductController::class, 'product_add']);
+Route::post("admin/product-add", [ProductController::class, 'product_adding']);
+
 
 Route::get('pages/page1',[PageController::class, 'page1']);
+Route::get('pages/page2/{id?}',[PageController::class, 'page2'] );
 
-Route::get('pages/page2',[PageController::class, 'page2'] );
+
