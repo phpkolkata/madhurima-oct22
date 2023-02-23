@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,8 @@ Route::get('/age', function(){
 Route::get("admin/product", function(){
     return view("admin.product");
 });
+
+Route::get("admin/category", [CategoryController::class, 'index']);
 
 
 Route::get("admin/product-add", [ProductController::class, 'product_add']);

@@ -10,10 +10,15 @@ class ProductController extends Controller
         // logics
         return view("admin.product_add");
     }
+
     function product_adding(Request $r){
-        return $r->all();
-        // logics
-        return "working";
+        $validated = $r->validate([
+        'name' => 'required|min:4|max:6',
+        'age' => 'required|numeric',
+        'email'=>'required|email'
+    ]);
+
+        return redirect('/admin/product');
     }
 
 }
