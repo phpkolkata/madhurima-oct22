@@ -37,6 +37,8 @@ Route::get("admin/product", function(){
 });
 
 Route::get("admin/category", [CategoryController::class, 'index']);
+Route::get("admin/category/add", [CategoryController::class, 'add']);
+Route::post("admin/category/add", [CategoryController::class, 'adding'])->name('add-cat');
 
 
 Route::get("admin/product-add", [ProductController::class, 'product_add']);
