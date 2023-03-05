@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +26,12 @@ Route::get('/', function () {
     return view('welcome',["nm"=>$name]);
 });
 
+Route::get('/pwd', function () {
+    // logic area
+    $pass = Hash::make("test");
+    return $pass;
+})->middleware('auth');
+
 Route::get('test', function () {
     $name = "raj";
     return view('test',["nm"=>$name]);
@@ -36,14 +46,23 @@ Route::get("admin/product", function(){
     return view("admin.product");
 });
 
-Route::get("admin/category", [CategoryController::class, 'index']);
-Route::get("admin/category/add", [CategoryController::class, 'add']);
-Route::post("admin/category/add", [CategoryController::class, 'adding'])->name('add-cat');
+Route::get("admin/", [AdminController::class, 'login'])->name('login');
+Route::post("admin/login-check", [AdminController::class, 'loginCheck']);
 
+Route::middleware(['auth'])->group(function () {
+    Route::get("admin/category", [CategoryController::class, 'index']);
+    Route::get("admin/category/add", [CategoryController::class, 'add']);
+    Route::post("admin/category/add", [CategoryController::class, 'adding'])->name('add-cat');
+    Route::get("admin/product-add", [ProductController::class, 'product_add']);
+    Route::post("admin/product-add", [ProductController::class, 'product_adding']);
+});
 
-Route::get("admin/product-add", [ProductController::class, 'product_add']);
-Route::post("admin/product-add", [ProductController::class, 'product_adding']);
+Route::resource('photos', PhotoController::class);
 
+Route::get('logout',function(){
+    Auth::logout();
+        return redirect('/admin');
+});
 
 Route::get('pages/page1',[PageController::class, 'page1']);
 Route::get('pages/page2/{id?}',[PageController::class, 'page2'] );
